@@ -45,6 +45,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.modal-open .modalSetting {
+  -webkit-filter: blur(0.5em);
+          filter: blur(0.5em);
+  opacity: 0.8; }
+
 body {
   background-color: #1e2642;
   font-family: "PingFangTC","Noto Sans TC";
@@ -107,7 +112,7 @@ body {
       margin-top: 255px; }
       @media (max-width: 568px) {
         body .wrap .main {
-          margin-top: 80px; } }
+          margin-top: 160px; } }
       body .wrap .main h2 {
         font-size: 52px;
         font-weight: 600;
@@ -266,7 +271,8 @@ body {
       body .wrap .aboutMe p {
         font-size: 18px;
         line-height: normal;
-        margin: 30px 15.2%; }
+        margin: 30px 15.2%;
+        font-weight: lighter; }
         @media (max-width: 568px) {
           body .wrap .aboutMe p {
             margin: 30px 11.2%;
@@ -297,9 +303,13 @@ body {
           padding: 40px; } }
     body .wrap .collectModal .close {
       position: absolute;
-      top: -40px;
-      right: -40px;
+      top: -55px;
+      right: -55px;
       cursor: pointer; }
+      @media (max-width: 768px) {
+        body .wrap .collectModal .close {
+          top: -20px;
+          right: -20px; } }
     body .wrap .collectModal .collectImg .box {
       width: 47.5%;
       display: inline-block; }
@@ -358,7 +368,10 @@ body {
       position: absolute;
       top: 20px;
       right: 20px;
-      color: #ffffff; }
+      color: #ffffff;
+      background-color: transparent;
+      border: none;
+      font-size: 20px; }
       body .menuOpen .closeButton:hover {
         -webkit-transition: 0.3s color;
         transition: 0.3s color;

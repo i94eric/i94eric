@@ -30,18 +30,18 @@ $(document).ready(function () {
     });
     $('.productInfo').click(function () {
         event.preventDefault();
-        // $('.header').addClass('menu-on');
-        // $('.main').addClass('menu-on');
-        // $('.collection').addClass('menu-on');
-        // $('.aboutMe').addClass('menu-on');
+        $('.header').addClass('modalSetting');
+        $('.main').addClass('modalSetting');
+        $('.collection').addClass('modalSetting');
+        $('.aboutMe').addClass('modalSetting');
     });
-    // $('.close').click(function(){
-    //     event.preventDefault();
-    //     $('.header').removeClass('menu-on');
-    //     $('.main').removeClass('menu-on');
-    //     $('.collection').removeClass('menu-on');
-    //     $('.aboutMe').removeClass('menu-on');
-    // });
+    $('.close').click(function () {
+        event.preventDefault();
+        $('.header').removeClass('menu-on');
+        $('.main').removeClass('menu-on');
+        $('.collection').removeClass('menu-on');
+        $('.aboutMe').removeClass('menu-on');
+    });
     $('.productButton').mouseenter(function () {
         $(this).addClass('infoOn').siblings().css("display", "block");
     });
@@ -55,6 +55,14 @@ $(document).ready(function () {
     $('.productInfo').mouseleave(function () {
         $(this).css("display", "none");
         $(this).siblings().removeClass('infoOn');
+    });
+    $(document).mouseup(function (e) {
+        var _con = $('.menuList'); // 设置目标区域
+        if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+            // Mark 1
+            $('.wrap').removeClass('menu-on');
+            $('.menuOpen').removeClass('active');
+        }
     });
 });
 //# sourceMappingURL=all.js.map
