@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="wrap cover">
+      <img class="sideImg" src="./Images/project.png" alt="">
+      <div class="video-container">
+        <iframe width="1440" height="710" src="https://www.youtube.com/embed/YG6QT6zEHKk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="mobileMenu">
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="d-flex justify-content-around align-items-center">
+        <a href="index.html" class="projectColor">HOMEPAGE</a>
+        <a href="about.html" class="projectColor">ABOUT</a>
+        <a href="project.html" class="projectColor">PROJECT</a>
+        <a href="team.html" class="projectColor">TEAM</a>
+        <a href="contact.html" class="projectColor">CONTACT</a>
+      </nav>
+    </div>
+    <div class="modalBomb">
+        <span class="closeBtn" aria-hidden="true">×</span>
+        <div class="modalContent">
+          <h2>#轟炸台灣</h2>
+          <h2 class="enTitle">Bombing Taiwan</h2>
+          <p>站在這個世代的轉捩點<br>我們一同承接過往的文化傳統<br>轉化、融合，成為現今的風貌<br>所有改變的過程都免不了碰撞和衝突<br>因革命而破壞<br>為改變而轟炸</p>
+          <p>我們希望能夠將這轉變中的臺灣<br>呈現給所有認識與不認識<br>將世代間爆炸性的衝撞過程<br>以最安靜的方式<br>記錄下來</p>
+          <p>為臺灣轟炸，轟炸台灣</p>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="./js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <script>
+      window.onload =function(){
+        document.querySelector('.wrap').style.height = window.innerHeight+ "px";
+        document.querySelector('.wrap').style.Width = window.innerWidth+ "px";
+    }
+    $(document).ready(function(){
+        $(".closeBtn").click(function(){
+            $(".modalBomb").css("display","none");
+            $(".wrap").removeClass("cover");
+        });
+      $(document).mouseup(function(e){
+          var _con = $('.modalBomb');   // 设置目标区域
+          if(!_con.is(e.target) && _con.has(e.target).length === 0){ // Mark 1
+              $('.wrap').removeClass('cover');
+              $(".modalBomb").css("display","none");
+          }
+      });
+    });
+    </script>
+  </body>
+</html>
